@@ -11,4 +11,4 @@ composer create-project speedworks/speedy <project_name>
 ##Documentation
 https://speedworks.github.io/speedy/
 ### Current Version
-1.0
+1
