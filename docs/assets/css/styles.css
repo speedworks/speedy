@@ -1491,3 +1491,35 @@ li.slideLeft {
 .doc-menu > li.justCl:hover:before {
     border-left:8px solid #f77b6b;
 }
+
+
+#x-heart{
+  animation: heartbeat 1s infinite;
+}
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
