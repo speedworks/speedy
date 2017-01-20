@@ -23,6 +23,6 @@ return [
     'session_life' => 604800, // in seconds
     'cache_template' => true, //ALLOW TEMPLATE CACHING FOR SPEED
     'error_pages' => [
-        '404' => '404'
+        '404' => '404' //404 ERROR Page
     ]
 ];
