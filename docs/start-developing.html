@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Start Developing- Speedy</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="assets/plugins/mfizz/font-mfizz.css">
+    <link rel="stylesheet" href="assets/css/highlight.min.css">
+    <script src="assets/js/highlight.min.js"></script>
+</head>
+
+<body class="body-blue">
+<div class="page-wrapper">
+    <header id="header" class="header">
+        <div class="container">
+            <div class="branding">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <div class="logoImg headLogo">
+                            <img src="assets/images/speedy.png" alt=""/>
+                        </div>&nbsp;
+                        <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                        <span class="text-highlight">Speedy</span><span class="text-bold">Docs</span>
+                    </a>
+                </h1>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Start Developing</li>
+            </ol>
+        </div>
+    </header>
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title"><i class="icon icon_cone_alt"></i> Start Developing</h1>
+                <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Jan 15, 2017</div>
+            </div>
+            <div class="doc-body">
+                <div class="doc-content">
+                    <div class="content-inner">
+                        <section id="basic-application-section" class="doc-section">
+                            <h2 class="section-title">Basic Application</h2>
+                            <div class="section-block">
+                                <p>
+                                    The basic Speedy Application consists of a route (path) that will take user to a particular page, but before the page can be displayed the application may need to process or apply some logic to the end page or maybe authenticate a user so the request is passed on to a controller and then to the view which is returned to the user in the end.
+                                </p>
+                                <div id="defining-a-route-subsection" class="section-block">
+                                    <h3 class="block-title">Defining a route</h3>
+                                    <p>
+                                        The file containing the application routes is <strong><em>App/Routes.php</em></strong>.<br/>
+                                        Routes are defined along with their request methods. Let us define a route called <strong>hello</strong> which can be called using the <em>GET</em> method:<br/>
+                                        <span>
+                                            <code class="php">
+                                                Route::get('/hello','HelloController@sayHello');
+                                            </code>
+                                        </span>
+                                        <br/>
+                                        The above code states that the request on url <em>/hello</em> can be accepted using the GET method. <br/>
+                                        Here <strong>HelloController</strong> is the name of the controller to be called and <strong>sayHello</strong> is the method in that controller to be invoked.
+                                    </p>
+                                </div>
+                                <div id="creating-a-controller-subsection" class="section-block">
+                                    <h3 class="block-title">Creating a controller</h3>
+                                    <p>
+                                        Open up your terminal or command window and navigate to your Speedy installation directory and key in the following command:<br/>
+                                        <span>
+                                            <code class="cs">
+                                                php creator create:controller HelloController
+                                            </code>
+                                        </span>
+                                        The command above creates a controller named <strong>HelloController</strong> and places it in the <em>/Controllers</em> directory.<br/>
+                                        Controllers can also be made manually and then put into the Controllers directory but if you use this approach you will need to put the initial code of the controller yourself or the controller will not work as expected.
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fa fa-lightbulb-o"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="callout-title">Note</h5>
+                                                <p>Although not required, it is a good practice to append the controller name with the word controller, like HelloController / TestController.</p>
+                                            </div>
+                                        </div>
+                                        Create a function named <strong>sayHello</strong> in HelloController and return the view you want the user to see.
+                                        <span>
+                                            <code class="php">
+                                                public function sayHello()<br/>
+                                                {<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;return view('hello',['name'=>"Jhonny"]);<br/>
+                                                }<br/>
+                                            </code>
+                                        </span>
+                                        The function returns a view named <strong>hello</strong> and passes a variable named <strong>name</strong> to it.<br/>
+                                        The <em>view</em> function accepts the first parameter as the view name (<strong>without any file extension</strong>) and the second parameter is an array of values we want to pass on to the view to show.
+                                    </p>
+                                </div>
+                                <div id="creating-a-view-subsection" class="section-block">
+                                    <h3 class="block-title">Creating a View</h3>
+                                    <p>
+                                        The view is the page that will be shown to the user. It is this page where all the processed data is rendered.<br/>
+                                        The <em>Views</em> directory holds all the views for the application.
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fa fa-hand-pointer-o"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="callout-title">Important</h5>
+                                                <p>All views should be stored in the /Views Directory and all of them should end with the extension <strong>.vu.php</strong> . E.g. hello.vu.php</p>
+                                            </div>
+                                        </div>
+                                        Create a file named hello.vu.php in the /Views directory and place the following content in it:
+                                        <span>
+                                            <code class="html">
+                                                &lt;html&gt;<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Page&lt;/title&gt;<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt; Hello {{name}} &lt;/h2&gt;<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br/>
+                                                &lt;/html&gt;
+                                            </code>
+                                        </span>
+                                        The view file contains the basic HTML code and a variable declared as <strong>{{name}}</strong>, this is the variable we passed from our controller and wil be replaced with it.
+                                    </p>
+                                </div>
+                                <div id="run-your-code-subsection" class="section-block">
+                                    <h3 class="block-title">Run your code</h3>
+                                    <p>
+                                        Your code is ready to run.<br/>
+                                        If you do not have a server software installed, go to your terminal / command window and navigate to the project directory and start the Speedy test server by entering the following command:<br/>
+                                        <span>
+                                            <code class="cs">
+                                                php creator run:server
+                                            </code>
+                                        </span>
+                                        Head over to the browser and open up the appropriate link:<br/>
+                                        If you have a server software installed you should open up your <em>public</em> directory path followed by path to be accessed - <strong>/hello</strong> for your test page.
+                                        <br/>
+                                        If you are using the Speedy test server then head over to <a href="http://localhost:9090/hello" target="_blank">http://localhost:9090/hello</a> .
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="advanced-actions-section" class="doc-section">
+                            <h2 class="section-title">Advanced Actions</h2>
+                            <div class="section-block">
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="doc-sidebar hidden-xs">
+                    <nav id="doc-nav">
+                        <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                            <li>
+                                <a class="scrollto" href="#basic-application-section">Basic Application</a>
+                                <ul class="nav doc-sub-menu">
+                                    <li>
+                                        <a class="scrollto" href="#defining-a-route-subsection">Defining a Route</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#creating-a-controller-subsection">Creating a Controller</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#creating-a-view-subsection">Creating a View</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#run-your-code-subsection">Run your Code</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="scrollto" href="#advanced-actions-section">Advanced Actions</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="promo-block" class="promo-block">
+        <div class="container">
+            <div class="promo-block-inner">
+                <h3 class="promo-title text-center">
+
+                </h3>
+                <div class="row">
+                    <div class="content-holder col-md-12 col-sm-12 col-xs-12">
+                        <div class="content-holder-inner">
+                            <div class="desc">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for Speedy</small>
+    </div>
+</footer>
+
+
+<!-- Main Javascript -->
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/prism/prism.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript">
+    SP.structure.init();
+</script>
+</body>
+</html>
+

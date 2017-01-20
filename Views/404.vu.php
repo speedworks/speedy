@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>404 - Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        .info h1,.info p{font-family:'Varela Round',sans-serif}.btn,.fineliner,.info,.pencil{position:absolute;left:50%}body{background-color:#fff}.container{margin:0 auto;padding:0;text-align:center}.info{color:#e8697e;top:50%;margin-top:0;-webkit-transform:translateX(-50%) translateY(-50%);-moz-transform:translateX(-50%) translateY(-50%);-o-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.info h1{font-size:72px;padding-top:14px;text-shadow:0 5px rgba(0,0,0,.1)}.info .frame{width:400px;height:119px;border:7px solid #e8697e}.info p{font-size:17px;text-align:left;margin-top:20px}.btn{bottom:0;margin-left:-96px;margin-bottom:25px;font-family:'Open Sans',sans-serif;text-transform:uppercase;border:none;-webkit-transition:all .2s;-moz-transition:all .2s;-o-transition:all .2s;transition:all .2s;-webkit-animation-name:blinker;-webkit-animation-duration:1.5s;-webkit-animation-timing-function:linear;-webkit-animation-iteration-count:infinite;-moz-animation-name:blinker;-moz-animation-duration:1.5s;-moz-animation-timing-function:linear;-moz-animation-iteration-count:infinite;animation-name:blinker;animation-duration:1.5s;animation-timing-function:linear;animation-iteration-count:infinite}@keyframes blinker{0%,100%{opacity:1}50%{opacity:.3}}.btn-link,.btn-link:focus,.btn-link:hover{color:#b2b2b2}.fineliner{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAD6CAMAAACmlYbsAAAAaVBMVEUAAADykgDxkAAAAAAAAAAEAwEAAAAAAAAAAAAAAAC+hza5bwDHt57ykQAAAAAAAADiiADzkAAAAAAAAAAAAADykQDynADAjkYdFQokGQpNLwAAAACQWQDykQAAAAD////2t1b3vmn2r0UdzaF7AAAAHXRSTlMAYl5gsPpV732X4Nb18+TAn1NGQTgmCeLi1SsbF33J8eUAAABvSURBVEjH7cdHDoNAEATAtjHY3iUnBxjS/x+J0EjEM5y6boW97LHIAKdZOCx7SdMofKowSoEyNr6x1hr/E5dAIl3bicjQ9pIAt1XvLMuyLMuyLMtuWwRzgwJA/XPV94+J16gXTm7lanOo/D3xcDAC1LNB38mb2CQAAAAASUVORK5CYII=) no-repeat;background-size:cover;width:10px;height:178px;top:50%;margin:-190px 0 0 -234px;-ms-transform:rotate(34deg);-webkit-transform:rotate(34deg);transform:rotate(34deg);-webkit-filter:drop-shadow(3px 6px 0 rgba(0,0,0,.1));filter:drop-shadow(3px 6px 0 rgba(0, 0, 0, .1))}.pencil{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAD6CAMAAACmlYbsAAAAVFBMVEUAAACxnYmxnI2ynIm/sKGzoox5cmqOfIVkYFy9rp29rZ69rZ28rZy8rJm6qpq7qZqIfnWbjoG4qpm4p5W6q5y8q5qynYrBs6S1oo9AQEFiX1xKSUhleh5rAAAAFnRSTlMANDF39xfSCffg2dLKm5CFfV4+JKekX2d4iQAAAIxJREFUSMft0EkOwjAQRNEkxGSegcbO/e+J57Yl1lEW9XdP6pIsF/8TOZ+ZmrNJuco1u5XZdSvblKdMx5tSamO+iejF7DQ7Jpmidss9cLKcAnvLPrC2rL0qclWOs+fsOHgOPOXxQaHDcIlcDMfIMUx5LIjT31t+uVK/6cOBIAiCIAiCIAjegeLBieKqfpNS3Davm3dQAAAAAElFTkSuQmCC) no-repeat;background-size:cover;width:9px;height:156px;top:50%;margin:-150px 0 0 -230px;-ms-transform:rotate(36deg);-webkit-transform:rotate(36deg);transform:rotate(36deg);-webkit-filter:drop-shadow(3px 6px 0 rgba(0,0,0,.1));filter:drop-shadow(3px 6px 0 rgba(0, 0, 0, .1))}@media (max-width:1366px){.fineliner{width:10px;height:178px;top:50%;left:50%;margin:-190px 0 0 -234px}.pencil{width:9px;height:156px;top:50%;left:50%;margin:-150px 0 0 -230px}}@media (max-width:1023px),(max-height:839px){.info h1{font-size:50px;padding-top:13px;text-shadow:0 4px rgba(0,0,0,.1)}.info .frame{width:310px;height:93px;border:6px solid #e8697e}.fineliner,.pencil{width:6px;top:50%;left:50%}.info p{font-size:14px;margin-top:15px}.fineliner{height:116px;margin:-125px 0 0 -180px;-webkit-filter:drop-shadow(3px 4px 0 rgba(0,0,0,.1));filter:drop-shadow(3px 4px 0 rgba(0, 0, 0, .1))}.pencil{height:105px;margin:-105px 0 0 -175px;-webkit-filter:drop-shadow(3px 4px 0 rgba(0,0,0,.1));filter:drop-shadow(3px 4px 0 rgba(0, 0, 0, .1))}}@media (max-width:479px),(max-height:350px){.btn{margin-bottom:15px}.info{margin-top:-11px}.info h1{font-size:32px;padding-top:10px;text-shadow:0 3px rgba(0,0,0,.1)}.info .frame{width:200px;height:60px;border:4px solid #e8697e}.info p{width:152px;font-size:14px;margin-top:10px}.fineliner,.pencil{width:4px;height:80px;top:50%;left:50%}.fineliner{margin:-116px 0 0 -117px;-webkit-filter:drop-shadow(2px 3px 0 rgba(0,0,0,.1));filter:drop-shadow(2px 3px 0 rgba(0, 0, 0, .1))}.pencil{margin:-104px 0 0 -113px;-webkit-filter:drop-shadow(2px 3px 0 rgba(0,0,0,.1));filter:drop-shadow(2px 3px 0 rgba(0, 0, 0, .1))}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <section class="info">
+        <h1 class="frame">404</h1>
+        <p>The page you are looking for does not exist.</p>
+    </section>
+    <div class="fineliner"></div>
+    <div class="pencil"></div>
+</div>
+</body>
+</html>

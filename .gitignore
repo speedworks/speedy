@@ -1,0 +1,7 @@
+.idea
+/composer.lock
+/Core/Plugins
+/app.lock
+/DBTables/migrations.lock
+Crontab/cronLog.log
+Storage/Cache/Views/*

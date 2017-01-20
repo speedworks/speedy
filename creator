@@ -1,0 +1,474 @@
+#!/usr/bin/env php
+<?php
+class creator
+{
+    private static $SERVER_PORT = 9090;
+    private static $ANSI_RESET = "\033[0m";
+    private static $ANSI_RED = "\033[31m";
+    private static $ANSI_GREEN = "\033[32m";
+    private static $ControllerDir = __DIR__."/Controllers";
+    private static $controllerContents = '<?php
+/**
+ * Created by Creator.
+ * @Author : !!CUR-USER-NAME!!
+ * Date: !!CUR-DATE!!
+ * Time: !!CUR-TIME!!
+ */
+namespace Control\Controllers;
+use Core\BaseClasses\BaseController;
+
+class !!CONTROLLER-NAME!! extends BaseController
+{
+    public function __construct($request)
+    {
+        parent::__construct($request);
+    }
+}
+';
+
+    /**
+     * creator constructor.
+     */
+    public function __construct()
+    {
+        global $argc, $argv;
+        if (PHP_SAPI != 'cli')
+        {
+            $this->write("creator needs to be run from the Command Line", 1);
+            exit(1);
+        }
+        if ($argc < 2)
+        {
+            $this->write("Invalid Parameters\nExample Usage:\nphp creator create:controller <Controller Name>", 1);
+            exit(1);
+        }
+        $args = trim($argv[1]);
+        $args = explode(":", $args);
+        if (count($args) > 0)
+        {
+            if ($args[0] == "create")
+            {
+                if (count($args) > 1)
+                {
+                    if ($args[1] == "controller")
+                    {
+                        $this->controller($argc, $argv);
+                    }
+                    else
+                    {
+                        $this->write("Feature not available", 1);
+                        exit(1);
+                    }
+                }
+                else
+                {
+                    $this->write("Invalid Parameters\nExample Usage:\nphp creator create:controller <Controller Name>", 1);
+                    exit(1);
+                }
+            }
+            else if($args[0] == "init")
+            {
+                if (count($args) > 1)
+                {
+                    if ($args[1] == "app")
+                    {
+                        $this->init($argc, $argv);
+                    }
+                    else
+                    {
+                        $this->write("Feature not available", 1);
+                        exit(1);
+                    }
+                }
+                else
+                {
+                    $this->write("Invalid Parameters\nExample Usage:\nphp creator init:app", 1);
+                    exit(1);
+                }
+            }
+
+            else if($args[0] == "db")
+            {
+                if (count($args) > 1)
+                {
+                    if ($args[1] == "update")
+                    {
+                        $this->dbUpdate($argc, $argv);
+                    }
+                    else
+                    {
+                        $this->write("Feature not available", 1);
+                        exit(1);
+                    }
+                }
+                else
+                {
+                    $this->write("Invalid Parameters\nExample Usage:\nphp creator db:update [optional:table_name]", 1);
+                    exit(1);
+                }
+            }
+
+            else if($args[0] == "run")
+            {
+                if (count($args) > 1)
+                {
+                    if ($args[1] == "server")
+                    {
+                        $this->serve($argc, $argv);
+                    }
+                    else
+                    {
+                        $this->write("Feature not available", 1);
+                        exit(1);
+                    }
+                }
+                else
+                {
+                    $this->write("Invalid Parameters\nExample Usage:\nphp creator run:server [optional:port]", 1);
+                    exit(1);
+                }
+            }
+
+            else if($args[0] == "cache")
+            {
+                if (count($args) > 1)
+                {
+                    if ($args[1] == "clear")
+                    {
+                        $this->clearCache($argc, $argv);
+                    }
+                    else
+                    {
+                        $this->write("Feature not available", 1);
+                        exit(1);
+                    }
+                }
+                else
+                {
+                    $this->write("Invalid Parameters\nExample Usage:\nphp creator cache:clear", 1);
+                    exit(1);
+                }
+            }
+            else
+            {
+                $this->write("Invalid Parameters\nExample Usage:\nphp creator create:controller <Controller Name>", 1);
+                exit(1);
+            }
+        }
+        else
+        {
+            $this->write("Feature not available", 1);
+            exit(1);
+        }
+    }
+
+    /**
+     * @param mixed: $inData
+     * @param int $level
+     */
+    private function write($inData, $level = 99)
+    {
+        echo "\n";
+        if (is_array($inData))
+        {
+            print_r($inData);
+        }
+        else
+        {
+            if ($level == 1)
+            {
+                echo creator::$ANSI_RED . "[ERROR] " . creator::$ANSI_RESET . $inData;
+            }
+            else if ($level == 0)
+            {
+                echo creator::$ANSI_GREEN . "[OK] " . creator::$ANSI_RESET . $inData;
+            }
+            else
+            {
+                echo $inData;
+            }
+        }
+        echo "\n\n";
+    }
+
+
+    /**
+     * App initial loader
+     */
+    private function init()
+    {
+        $this->write("creator init:app", 0);
+        if(file_exists(__DIR__.DIRECTORY_SEPARATOR.'app.lock'))
+        {
+            $this->write("App already initialized ! Cannot re-initialize",1);
+            exit(1);
+        }
+        else
+        {
+            if(!is_writable(__DIR__.DIRECTORY_SEPARATOR.'Crontab') || !is_writable(__DIR__.DIRECTORY_SEPARATOR.'Storage') || !is_writable(__DIR__.DIRECTORY_SEPARATOR.'App'.DIRECTORY_SEPARATOR.'config.php'))
+            {
+                $this->write("Unable to initialize App Please check that Crontab,App/config.php and Storage directories have write access and then try again with creator init:app", 1);
+                exit(1);
+            }
+            $this->write("Initializing App", 0);
+            if(!mkdir(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'Cache'.DIRECTORY_SEPARATOR.'Views',0777,true))
+            {
+                $this->write("Unable to initialize App Please check that Crontab and Storage directories have write access and then try again with creator init:app", 1);
+                exit(1);
+            }
+            file_put_contents(__DIR__.DIRECTORY_SEPARATOR.'DBTables'.DIRECTORY_SEPARATOR.'migrations.lock',"{}");
+            if(!file_exists(__DIR__.DIRECTORY_SEPARATOR.'DBTables'.DIRECTORY_SEPARATOR.'migrations.lock'))
+            {
+                $this->write("Unable to write to directory DBTables, Please make sure it is writable",1);
+                exit(1);
+            }
+            file_put_contents(__DIR__.DIRECTORY_SEPARATOR."app.lock",date('Y-m-d H:i:s'));
+            if(!file_exists(__DIR__.DIRECTORY_SEPARATOR."app.lock"))
+            {
+                $this->write("Unable to write to app root directory, Please make sure it is writable",1);
+                exit(1);
+            }
+            @chmod(__DIR__.DIRECTORY_SEPARATOR."creator",0667);
+            $configData = file_get_contents(__DIR__.DIRECTORY_SEPARATOR.'App'.DIRECTORY_SEPARATOR.'config.php');
+            $newConfig_data = str_replace("'app_key' => '4r!wDe@uY*%mn1286afde#@O0+kUse1*',","'app_key' => '".substr(hash_hmac('sha256',uniqid(),time()),0,32)."',",$configData);
+            file_put_contents(__DIR__.DIRECTORY_SEPARATOR.'App'.DIRECTORY_SEPARATOR.'config.php',$newConfig_data);
+            file_put_contents(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'log.log',"");
+            file_put_contents(__DIR__.DIRECTORY_SEPARATOR.'Crontab'.DIRECTORY_SEPARATOR.'cronLog.log',"");
+            @chmod(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'log.log',0777);
+            @chmod(__DIR__.DIRECTORY_SEPARATOR.'Crontab'.DIRECTORY_SEPARATOR.'cronLog.log',0777);
+            $this->write("App init Complete", 0);
+        }
+    }
+
+    /**
+     * Controller Creator
+     * @param $argc
+     * @param $argv
+     */
+    private function controller($argc, $argv)
+    {
+        if ($argc < 3)
+        {
+            $this->write("Please provide a unique Controller name", 1);
+            exit(1);
+        }
+        else
+        {
+            $controllerName = trim($argv[2]);
+            $controllerFile = self::$ControllerDir.DIRECTORY_SEPARATOR. $controllerName . ".php";
+            if (file_exists($controllerFile))
+            {
+                $this->write("Controller " . $controllerName . " already exists !", 1);
+                exit(1);
+            }
+            else
+            {
+                $this->write("Create Controller " . $controllerName, 0);
+                self::$controllerContents = str_replace("!!CONTROLLER-NAME!!",$controllerName,self::$controllerContents);
+                self::$controllerContents = str_replace("!!CUR-USER-NAME!!",get_current_user(),self::$controllerContents);
+                self::$controllerContents = str_replace("!!CUR-DATE!!",date('d/M/Y'),self::$controllerContents);
+                self::$controllerContents = str_replace("!!CUR-TIME!!",date('H:i:s'),self::$controllerContents);
+                $result             = file_put_contents($controllerFile, self::$controllerContents);
+                if ($result)
+                {
+                    $this->write("Controller " . $controllerName . " created successfully.", 0);
+                }
+                else
+                {
+                    $this->write("Unable to create controller " . $controllerName, 1);
+                    exit(1);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Dev Server for the framework
+     * @param $argc
+     * @param $argv
+     */
+    private function serve($argc, $argv)
+    {
+        $port = self::$SERVER_PORT;
+        if($argc == 3)
+        {
+            if(!is_numeric($argv[2]))
+            {
+                $this->write("Invalid port value !",1);
+                exit(1);
+            }
+            $port = $argv[2];
+        }
+        $command = "php -S localhost:".$port." -t public server.php";
+        $this->write("Server started at localhost:".$port,0);
+        `$command`;
+        $this->write("Server stopped at localhost:".$port,1);
+        exit();
+    }
+
+    /**
+     * @param $argc
+     * @param $argv
+     */
+    private function dbUpdate($argc, $argv)
+    {
+        if ($argc < 3) //all un-updated tables
+        {
+            $this->write("Updating all new tables", 0);
+            $newTablesToBeUpdated = $this->getNewTables();
+            $this->updateTables($newTablesToBeUpdated);
+        }
+        else //a specific table
+        {
+            $tableName = trim($argv[2]);
+            if(!file_exists(__DIR__.DIRECTORY_SEPARATOR."DBTables".DIRECTORY_SEPARATOR."table_".$tableName.".sql") || is_dir(__DIR__.DIRECTORY_SEPARATOR."DBTables".DIRECTORY_SEPARATOR."table_".$tableName.".sql"))
+            {
+                $this->write("Unable to read table file table_".$tableName.".sql !", 1);
+                exit(1);
+            }
+            $this->write("Running update for table :: ".$tableName, 0);
+            $this->updateTables(["table_".$tableName.".sql"]);
+        }
+    }
+
+    /**
+     * @return array
+     */
+    private function getNewTables()
+    {
+        $mLockFile = __DIR__.DIRECTORY_SEPARATOR.'DBTables'.DIRECTORY_SEPARATOR.'migrations.lock';
+        $tablesToSkip = array();
+        $fileData = null;
+        @$fileData = file_get_contents($mLockFile);
+        if($fileData == null)
+        {
+            $this->write("Unable to access File ".$mLockFile,1);
+            $this->write("Please ensure that this file exists and has write permissions !",1);
+            exit(1);
+        }
+        $fileJSON = json_decode($fileData,true);
+        if(count($fileJSON) > 0) //There are tables to skip
+        {
+            $tablesToSkip = array_keys($fileJSON);
+        }
+        array_walk($tablesToSkip, function(&$value, $key) { $value .= '.sql'; });
+        $filesInDir = scandir(__DIR__.DIRECTORY_SEPARATOR.'DBTables'.DIRECTORY_SEPARATOR);
+        $tmp = array();
+        foreach ($filesInDir as $file)
+        {
+            if(substr($file, 0, 6 ) === "table_")
+            {
+                $tmp[] = $file;
+            }
+        }
+        $filesInDir = $tmp;
+        unset($tmp);
+        //REMOVE already updated file names
+        $filesToScan = array_diff($filesInDir, $tablesToSkip);
+        unset($filesInDir);
+        return $filesToScan;
+    }
+
+    /**
+     * @param $tableFiles
+     */
+    private function updateTables($tableFiles)
+    {
+        $mLockFile = __DIR__.DIRECTORY_SEPARATOR.'DBTables'.DIRECTORY_SEPARATOR.'migrations.lock';
+        $fileData = null;
+        @$fileData = file_get_contents($mLockFile);
+        if($fileData == null)
+        {
+            $this->write("Unable to access File ".$mLockFile,1);
+            $this->write("Please ensure that this file exists and has write permissions !",1);
+            exit(1);
+        }
+        $lockFileArray = json_decode($fileData,true);
+
+        if(count($tableFiles) == 0)
+        {
+            $this->write("No Tables to Auto Update !",1);
+            exit(1);
+        }
+        $envs = require 'App'.DIRECTORY_SEPARATOR.'config.php';
+        $dbHandle = mysqli_connect($envs['DB_SERVER'], $envs['DB_USER'], $envs['DB_PASSWORD'], $envs['DB_NAME'], $envs['DB_PORT']);
+        if (!$dbHandle)
+        {
+            $this->write("Unable to connect to MySQL",1);
+            $this->write(mysqli_connect_errno(),1);
+            $this->write(mysqli_connect_error(),1);
+            exit(1);
+        }
+        foreach ($tableFiles as $table)
+        {
+            if(file_exists(__DIR__.DIRECTORY_SEPARATOR."DBTables".DIRECTORY_SEPARATOR.$table) && !is_dir(__DIR__.DIRECTORY_SEPARATOR."DBTables".DIRECTORY_SEPARATOR.$table))
+            {
+                $this->write("Reading file ".$table, 0);
+                $fileContents = null;
+                @$fileContents = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."DBTables".DIRECTORY_SEPARATOR.$table);
+                if($fileContents == null || $fileContents == "")
+                {
+                    $this->write("Unreadable or empty file - SKIPPING", 1);
+                    continue;
+                }
+                $res = mysqli_query($dbHandle,$fileContents);
+                if($res)
+                {
+                    $table = str_replace(".sql","",$table);
+                    if(array_key_exists($table,$lockFileArray))
+                    {
+                        $lockFileArray[$table] = "U - ".date('Y-m-d H:i:s');
+                    }
+                    else
+                    {
+                        $lockFileArray[$table] = "C - ".date('Y-m-d H:i:s');
+                    }
+                    $this->write("Updated file :: ".$table, 0);
+                }
+                unset($fileContents);
+            }
+            else
+            {
+                $this->write("Unable to read table file ".$table." - SKIPPING !", 1);
+            }
+        }
+        $this->write("Updates complete ! ", 0);
+        $this->write("Writing Lock File !", 0);
+        file_put_contents($mLockFile,json_encode($lockFileArray));
+        mysqli_close($dbHandle);
+        $this->write("Update Complete !", 0);
+    }
+    private function clearCache($argc, $argv)
+    {
+        $files = glob(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'Cache'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'*');
+        foreach($files as $file)
+        {
+            $this->rrmdir($file);
+        }
+        $this->write("Cache clear process complete", 0);
+    }
+    private function rrmdir($dir) {
+        if (is_dir($dir))
+        {
+            $objects = scandir($dir);
+            foreach ($objects as $object)
+            {
+                if ($object != "." && $object != "..")
+                {
+                    if (filetype($dir.DIRECTORY_SEPARATOR.$object) == "dir")
+                    {
+                        $this->rrmdir($dir . DIRECTORY_SEPARATOR . $object);
+                    }
+                    else
+                    {
+                        unlink   ($dir.DIRECTORY_SEPARATOR.$object);
+                    }
+                }
+            }
+            reset($objects);
+            rmdir($dir);
+        }
+    }
+}
+new creator();

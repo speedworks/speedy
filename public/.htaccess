@@ -1,0 +1,10 @@
+RewriteEngine On
+#To direct all requests to index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !.^assets$ [NC]
+RewriteCond %{REQUEST_URI} !=/index.php
+RewriteRule . index.php [L]
+
+#To disable directory listings and access
+Options -Indexes

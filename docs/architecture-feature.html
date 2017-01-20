@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Architecture & Features- Speedy</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="assets/plugins/mfizz/font-mfizz.css">
+</head>
+
+<body class="body-pink
+">
+<div class="page-wrapper">
+    <header id="header" class="header">
+        <div class="container">
+            <div class="branding">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <div class="logoImg headLogo">
+                            <img src="assets/images/speedy.png" alt=""/>
+                        </div>&nbsp;
+                        <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                        <span class="text-highlight">Speedy</span><span class="text-bold">Docs</span>
+                    </a>
+                </h1>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Architecture &amp; Features</li>
+            </ol>
+        </div>
+    </header>
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title"><i class="icon icon_puzzle_alt"></i> Architecture &amp; Features</h1>
+                <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Jan 1st, 2017</div>
+            </div>
+            <div class="doc-body">
+                <div class="doc-content">
+                    <div class="content-inner">
+                        <section id="features-section" class="doc-section">
+                            <h2 class="section-title">Features</h2>
+                            <div class="section-block">
+                                <ul class="list list-unstyled">
+                                    <li class="features"><i class="fa fa-calendar-check-o"></i> PSR 7 Compliant</li>
+                                    <li class="features"><i class="fa fa-child"></i> Easy to work with</li>
+                                    <li class="features"><i class="fa fa-shield"></i> Secure</li>
+                                    <li class="features"><i class="fa fa-tags"></i> Pluggable Design</li>
+                                    <li class="features"><i class="fa fa-certificate"></i> Twig Template Engine</li>
+                                    <li class="features"><i class="fa fa-cogs"></i> Auto Cron Job Handler</li>
+                                    <li class="features"><i class="fa fa-database"></i> Strong Database Abstraction Layer</li>
+                                    <li class="features"><i class="fa fa-fighter-jet"></i> Support for Rabbit MQ &amp; Redis</li>
+                                    <li class="features"><i class="fa fa-book"></i> Extensive Documentation</li>
+                                    <li class="features"><i class="fa fa-connectdevelop"></i> Simple Configuration</li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="architecture-section" class="doc-section">
+                            <h2 class="section-title">Architecture</h2>
+                            <p>
+                                Speedy is a <em><strong>full stack</strong></em> framework as it handles everything from serving the web content to database management and also managing the HTML generation all integrated in one Framework. Speedy provides an amazing experience for developers and designers alike.
+                            </p>
+                            <div class="section-block">
+                                <div id="project-structure" class="section-block">
+                                    <h3 class="block-title">Project Structure</h3>
+                                    <p>
+                                        Speedy follows the following directory and file structure:
+                                    </p>
+                                    <div class="structure">
+                                        <div class="col-md-6" style="border-right: 1px dotted #000000;">
+                                            <ol class="tree">
+                                                <li>
+                                                    <label for="ps-speedy" data-for="speedy" class="ps-item">Speedy</label> <input type="checkbox" checked disabled id="ps-speedy" />
+                                                    <ol>
+                                                        <li>
+                                                            <label for="ps-app" data-for="app" class="ps-item">App</label> <input type="checkbox" id="ps-app" />
+                                                            <ol>
+                                                                <li class="file x-php ps-item" data-for="config-php"><a class="nobg" href="javascript:void(0);">config.php</a></li>
+                                                                <li class="file x-php ps-item" data-for="routes-php"><a class="nobg" href="javascript:void(0);">Routes.php</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="controllers" for="ps-controllers">Controllers</label> <input type="checkbox" id="ps-controllers" />
+                                                            <ol>
+                                                                <li class="file x-php ps-item" data-for="welcomecontroller-php"><a class="nobg" href="javascript:void(0);">WelcomeController.php</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="core" for="ps-core">Core</label> <input type="checkbox" id="ps-core"/>
+                                                            <ol>
+                                                                <li>
+                                                                    <label class="ps-item" data-for="classes" for="ps-classes">Classes</label> <input type="checkbox" id="ps-classes"/>
+                                                                    <ol>
+                                                                        <li class="file x-php ps-item" data-for="baseauth-php"><a class="nobg" href="javascript:void(0);">BaseAuth.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="basecontroller-php"><a class="nobg" href="javascript:void(0);">BaseController.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="cookie-php"><a class="nobg" href="javascript:void(0);">Cookie.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="crontab-php"><a class="nobg" href="javascript:void(0);">Crontab.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="db-php"><a class="nobg" href="javascript:void(0);">DB.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="helpers-php"><a class="nobg" href="javascript:void(0);">Helpers.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="input-php"><a class="nobg" href="javascript:void(0);">Input.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="route-php"><a class="nobg" href="javascript:void(0);">Route.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="session-php"><a class="nobg" href="javascript:void(0);">Session.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="system-php"><a class="nobg" href="javascript:void(0);">System.php</a></li>
+                                                                    </ol>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="ps-item" data-for="middlewares" for="ps-middlewares">Middlewares</label> <input type="checkbox" id="ps-middlewares"/>
+                                                                    <ol>
+                                                                        <li class="file x-php ps-item" data-for="auth-php"><a class="nobg" href="javascript:void(0);">Auth.php</a></li>
+                                                                    </ol>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="ps-item" data-for="plugins" for="ps-plugins">Plugins</label> <input type="checkbox" id="ps-plugins"/>
+                                                                </li>
+                                                                <li class="file x-php ps-item" data-for="p-autoload-php"><a class="nobg" href="javascript:void(0);">autoload.php</a></li>
+                                                                <li class="file x-php ps-item" data-for="bridge-php"><a class="nobg" href="javascript:void(0);">Bridge.php</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="crontab" for="ps-crontab">Crontab</label> <input type="checkbox" id="ps-crontab"/>
+                                                            <ol>
+                                                                <li class="file x-php ps-item" data-for="cron-php"><a class="nobg" href="javascript:void(0);">Cron.php</a></li>
+                                                                <li class="file x-log ps-item" data-for="cronlog-log"><a class="nobg" href="javascript:void(0);">cronLog.log</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="dbtables" for="ps-dbtables">DBTables</label> <input type="checkbox" id="ps-dbtables"/>
+                                                            <ol>
+                                                                <li class="file x-lock ps-item" data-for="migrations-lock"><a class="nobg" href="javascript:void(0);">migrations.lock</a></li>
+                                                                <li class="file x-sql ps-item" data-for="table_api_keys-sql"><a class="nobg" href="javascript:void(0);">table_api_keys.sql</a></li>
+                                                                <li class="file x-sql ps-item" data-for="table_users-sql"><a class="nobg" href="javascript:void(0);">table_users.sql</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="docs" for="ps-docs">docs</label> <input type="checkbox" id="ps-docs"/>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="public" for="ps-public">public</label> <input type="checkbox" id="ps-public"/>
+                                                            <ol>
+                                                                <li class="file x-htaccess ps-item" data-for="-htaccess"><a class="nobg" href="javascript:void(0);">.htaccess</a></li>
+                                                                <li class="file x-php ps-item" data-for="index-php"><a class="nobg" href="javascript:void(0);">index.php</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="storage" for="ps-storage">Storage</label> <input type="checkbox" id="ps-storage"/>
+                                                            <ol>
+                                                                <li>
+                                                                    <label class="ps-item" data-for="cache" for="ps-cache">Cache</label> <input type="checkbox" id="ps-cache"/>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <label class="ps-item" data-for="c-views" for="ps-cviews">Views</label> <input type="checkbox" id="ps-cviews"/>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                                <li class="file x-lock ps-item" data-for="-store"><a class="nobg" href="javascript:void(0);">.store</a></li>
+                                                                <li class="file x-log ps-item" data-for="log-log"><a class="nobg" href="javascript:void(0);">log.log</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="tests" for="ps-tests">tests</label> <input type="checkbox" id="ps-tests"/>
+                                                            <ol>
+                                                                <li class="file x-php ps-item" data-for="flowtest-php"><a class="nobg" href="javascript:void(0);">FlowTest.php</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>
+                                                            <label class="ps-item" data-for="views" for="ps-views">Views</label> <input type="checkbox" id="ps-views"/>
+                                                            <ol>
+                                                                <li class="file x-php ps-item" data-for="404-vu-php"><a class="nobg" href="javascript:void(0);">404.vu.php</a></li>
+                                                                <li class="file x-php ps-item" data-for="welcome-vu-php"><a class="nobg" href="javascript:void(0);">welcome.vu.php</a></li>
+                                                            </ol>
+                                                        </li>
+                                                        <li class="file x-lock ps-item" data-for="app-lock"><a class="nobg" href="javascript:void(0);">app.lock</a></li>
+                                                        <li class="file x-json ps-item" data-for="composer-json"><a class="nobg" href="javascript:void(0);">composer.json</a></li>
+                                                        <li class="file x-shell ps-item" data-for="creator"><a class="nobg" href="javascript:void(0);">creator</a></li>
+                                                        <li class="file ps-item" data-for="license"><a href="javascript:void(0);">LICENSE</a></li>
+                                                        <li class="file ps-item" data-for="readme-md"><a href="javascript:void(0);">README.md</a></li>
+                                                        <li class="file x-php ps-item" data-for="server-php"><a class="nobg" href="javascript:void(0);">server.php</a></li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div class="col-md-6" id="ps-info">
+                                            <div class="infos" id="speedy" style="display: block;">
+                                                <h2 class="title">Speedy</h2>
+                                                <p>This is the project root directory, it contains all the project and framework data.</p>
+                                            </div>
+                                            <div class="infos" id="app">
+                                                <h2 class="title">App</h2>
+                                                <p>The App directory holds the app configuration and the routes to be used.</p>
+                                            </div>
+                                            <div class="infos" id="config-php">
+                                                <h2 class="title">config.php</h2>
+                                                <p>Holds the app configuration array which may be accessed within the app in the <strong>$_ENV</strong> variables.</p>
+                                            </div>
+                                            <div class="infos" id="routes-php">
+                                                <h2 class="title">Routes.php</h2>
+                                                <p>This is where all the routes for the application are declared.</p>
+                                            </div>
+                                            <div class="infos" id="controllers">
+                                                <h2 class="title">Controllers</h2>
+                                                <p>Contains the controllers required for the application.</p>
+                                            </div>
+                                            <div class="infos" id="welcomecontroller-php">
+                                                <h2 class="title">WelcomeController.php</h2>
+                                                <p>A sample controller file. Notice the camelCase of the controller name which is also the name of the class it contains.</p>
+                                            </div>
+                                            <div class="infos" id="core">
+                                                <h2 class="title">Core</h2>
+                                                <p>This directory contains the main classes and files required for the framework to function.</p>
+                                            </div>
+                                            <div class="infos" id="p-autoload-php">
+                                                <h2 class="title">autoload.php</h2>
+                                                <p>The autoload file is the primary linking point of all the Core classes and plugins. It automatically loads the classes from the /Core Directory.</p>
+                                            </div>
+                                            <div class="infos" id="bridge-php">
+                                                <h2 class="title">Bridge.php</h2>
+                                                <p>The Bridge.php is the interfacing bridge between the back-end of the application and the user. Any request that passes to the application, comes through the Bridge Class.</p>
+                                            </div>
+                                            <div class="infos" id="classes">
+                                                <h2 class="title">Classes</h2>
+                                                <p>Contains the framework base classes.</p>
+                                            </div>
+                                            <div class="infos" id="baseauth-php">
+                                                <h2 class="title">BaseAuth.php</h2>
+                                                <p>Contains the Base Authentication Class for Auth Middleware</p>
+                                            </div>
+                                            <div class="infos" id="basecontroller-php">
+                                                <h2 class="title">BaseController.php</h2>
+                                                <p>Contains the Base Class for working with Controllers.</p>
+                                            </div>
+                                            <div class="infos" id="cookie-php">
+                                                <h2 class="title">Cookie.php</h2>
+                                                <p>Framework's Cookie Management Class</p>
+                                            </div>
+                                            <div class="infos" id="crontab-php">
+                                                <h2 class="title">Crontab.php</h2>
+                                                <p>Speedy's Auto Cron handler.</p>
+                                            </div>
+                                            <div class="infos" id="db-php">
+                                                <h2 class="title">DB.php</h2>
+                                                <p>Database management Database Abstraction Layer(DAL) container.</p>
+                                            </div>
+                                            <div class="infos" id="helpers-php">
+                                                <h2 class="title">Helpers.php</h2>
+                                                <p>Framework's Helper functions container which can be called without objects or parent classes.</p>
+                                            </div>
+                                            <div class="infos" id="input-php">
+                                                <h2 class="title">Input.php</h2>
+                                                <p>Request data filtering and handling Class.</p>
+                                            </div>
+                                            <div class="infos" id="route-php">
+                                                <h2 class="title">Route.php</h2>
+                                                <p>Application Routing management class.</p>
+                                            </div>
+                                            <div class="infos" id="session-php">
+                                                <h2 class="title">Session.php</h2>
+                                                <p>Fast Session Handler / Manager class.</p>
+                                            </div>
+                                            <div class="infos" id="system-php">
+                                                <h2 class="title">System.php</h2>
+                                                <p>Class containing framework's core functions.</p>
+                                            </div>
+                                            <div class="infos" id="middlewares">
+                                                <h2 class="title">Middlewares</h2>
+                                                <p>Contains the Application's Middleware. Custom Middleware can be added.</p>
+                                            </div>
+                                            <div class="infos" id="auth-php">
+                                                <h2 class="title">Auth.php</h2>
+                                                <p>Authentication Middleware Class.</p>
+                                            </div>
+                                            <div class="infos" id="plugins">
+                                                <h2 class="title">Plugins</h2>
+                                                <p>This directory holds the sub applications required for the functioning of the Framework, anything added or removed in composer.json gets affected in this directory.</p>
+                                            </div>
+                                            <div class="infos" id="crontab">
+                                                <h2 class="title">Crontab</h2>
+                                                <p>Holds the Speedy auto cron handler definition file.</p>
+                                            </div>
+                                            <div class="infos" id="cron-php">
+                                                <h2 class="title">Cron.php</h2>
+                                                <p>Contains the cron commands to be executed along with their job run schedules.</p>
+                                            </div>
+                                            <div class="infos" id="cronlog-log">
+                                                <h2 class="title">cronLog.log</h2>
+                                                <p>Contains the cron-job run logs.</p>
+                                            </div>
+                                            <div class="infos" id="dbtables">
+                                                <h2 class="title">DBTables</h2>
+                                                <p>Contains Migrations (SQL Files) and lock file. Sql Files added here can be used to update database by running the migration command of creator.</p>
+                                            </div>
+                                            <div class="infos" id="migrations-lock">
+                                                <h2 class="title">migrations.lock</h2>
+                                                <p>Register that maintains the migration run details.</p>
+                                            </div>
+                                            <div class="infos" id="table_api_keys-sql">
+                                                <h2 class="title">table_api_keys.sql</h2>
+                                                <p>SQL File containing migration(SQL Code) for API Keys table.</p>
+                                            </div>
+                                            <div class="infos" id="table_users-sql">
+                                                <h2 class="title">table_users.sql</h2>
+                                                <p>SQL File containing migration(SQL Code) for Users table.</p>
+                                            </div>
+                                            <div class="infos" id="docs">
+                                                <h2 class="title">docs</h2>
+                                                <p>This is the directory which contains the Framework's Manual. The reference you are currently reading rests here :)</p>
+                                            </div>
+                                            <div class="infos" id="public">
+                                                <h2 class="title">public</h2>
+                                                <p>This is the publicly accessible directory all the custom css, js, images and other static files should be placed here <em>(preferably all bundled in a directory e.g. assets)</em>.</p>
+                                            </div>
+                                            <div class="infos" id="-htaccess">
+                                                <h2 class="title">.htaccess</h2>
+                                                <p>This is the application request forwarding file aka. the apache server configuration file.</p>
+                                            </div>
+                                            <div class="infos" id="index-php">
+                                                <h2 class="title">index-php</h2>
+                                                <p>This is the file to which all the user requests finally head to for further processing.</p>
+                                            </div>
+                                            <div class="infos" id="storage">
+                                                <h2 class="title">Storage</h2>
+                                                <p>This directory contains the cache and log files of Speedy.</p>
+                                            </div>
+                                            <div class="infos" id="cache">
+                                                <h2 class="title">Cache</h2>
+                                                <p>This directory contains the template engine cache files.</p>
+                                            </div>
+                                            <div class="infos" id="c-views">
+                                                <h2 class="title">Views</h2>
+                                                <p>Template engine views cache directory.</p>
+                                            </div>
+                                            <div class="infos" id="-store">
+                                                <h2 class="title">.store</h2>
+                                                <p>Storage lock file.</p>
+                                            </div>
+                                            <div class="infos" id="log-log">
+                                                <h2 class="title">log.log</h2>
+                                                <p>Contains application's log messages</p>
+                                            </div>
+                                            <div class="infos" id="tests">
+                                                <h2 class="title">tests</h2>
+                                                <p>Contains unit testing files.</p>
+                                            </div>
+                                            <div class="infos" id="flowtest-php">
+                                                <h2 class="title">FlowTest.php</h2>
+                                                <p>PHPUnit basic flow tests file.</p>
+                                            </div>
+                                            <div class="infos" id="views">
+                                                <h2 class="title">Views</h2>
+                                                <p>Contains application view files. All files contained herein should possibly end with the .vu.php file extension.</p>
+                                            </div>
+                                            <div class="infos" id="404-vu-php">
+                                                <h2 class="title">404.vu.php</h2>
+                                                <p>404 Error Page.</p>
+                                            </div>
+                                            <div class="infos" id="welcome-vu-php">
+                                                <h2 class="title">welcome.vu.php</h2>
+                                                <p>Welcome Page.</p>
+                                            </div>
+                                            <div class="infos" id="app-lock">
+                                                <h2 class="title">app.lock</h2>
+                                                <p>Application initialization lock file.</p>
+                                            </div>
+                                            <div class="infos" id="composer-json">
+                                                <h2 class="title">composer.json</h2>
+                                                <p>Composer dependency management file.</p>
+                                            </div>
+                                            <div class="infos" id="creator">
+                                                <h2 class="title">creator</h2>
+                                                <p>This is the file which should be executed in the command line to execute application functions such as migrating tables or creating controllers etc.</p>
+                                            </div>
+                                            <div class="infos" id="license">
+                                                <h2 class="title">LICENSE</h2>
+                                                <p>Speedy PHP Framework End User License Agreement (EULA) file.</p>
+                                            </div>
+                                            <div class="infos" id="readme-md">
+                                                <h2 class="title">README.md</h2>
+                                                <p>Description and installation procedure of Speedy PHP Framework.</p>
+                                            </div>
+                                            <div class="infos" id="server-php">
+                                                <h2 class="title">server.php</h2>
+                                                <p>Invoked when development server is started.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="doc-sidebar hidden-xs">
+                    <nav id="doc-nav">
+                        <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                            <li><a class="scrollto" href="#features-section">Features</a></li>
+                            <li>
+                                <a class="scrollto" href="#architecture-section">Architecture</a>
+                                <ul class="nav doc-sub-menu">
+                                    <li><a class="scrollto" href="#project-structure">Project Structure</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="promo-block" class="promo-block">
+        <div class="container">
+            <div class="promo-block-inner">
+                <h3 class="promo-title text-center">
+
+                </h3>
+                <div class="row">
+                    <div class="content-holder col-md-12 col-sm-12 col-xs-12">
+                        <div class="content-holder-inner">
+                            <div class="desc">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for Speedy</small>
+    </div>
+</footer>
+
+
+<!-- Main Javascript -->
+<script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/prism/prism.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript">
+    SP.structure.init();
+</script>
+</body>
+</html>
+
