@@ -8,6 +8,9 @@
       "email": "shaktihk009@gmail.com"
     }
   ],
+  "support": {
+    "docs": "https://speedworks.github.io/speedy"
+  },
   "config": {
     "vendor-dir": "Core/Plugins"
   },
