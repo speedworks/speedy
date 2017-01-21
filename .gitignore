@@ -5,3 +5,4 @@
 /DBTables/migrations.lock
 Crontab/cronLog.log
 Storage/Cache/Views/*
+composer.phar
