@@ -472,3 +472,4 @@ class !!CONTROLLER-NAME!! extends BaseController
     }
 }
 new creator();
+//end
