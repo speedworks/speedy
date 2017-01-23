@@ -1,5 +1,17 @@
+languages:
+   PHP: true
+   JavaScript: false
 exclude_paths:
 - "tests/"
 - "Core/Plugins"
 - "docs/"
 - "**.js"
+engines:
+  rubocop:
+    enabled: true
+  coffeelint:
+    enabled: false
+  eslint:
+    enabled: false
+  csslint:
+    enabled: false
