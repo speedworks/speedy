@@ -235,6 +235,7 @@ class !!CONTROLLER-NAME!! extends BaseController
             file_put_contents(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'log.log',"");
             file_put_contents(__DIR__.DIRECTORY_SEPARATOR.'Crontab'.DIRECTORY_SEPARATOR.'cronLog.log',"");
             @chmod(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'log.log',0777);
+            @chmod(__DIR__.DIRECTORY_SEPARATOR.'Storage'.DIRECTORY_SEPARATOR.'Cache'.DIRECTORY_SEPARATOR.'Views',0777);
             @chmod(__DIR__.DIRECTORY_SEPARATOR.'Crontab'.DIRECTORY_SEPARATOR.'cronLog.log',0777);
             $this->write("App init Complete", 0);
         }
