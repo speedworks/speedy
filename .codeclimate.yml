@@ -7,10 +7,10 @@ exclude_paths:
 - "docs/"
 - "**.js"
 engines:
-  rubocop:
+  phpcodesniffer:
     enabled: true
-  coffeelint:
-    enabled: false
+  phpmd:
+    enabled: true
   eslint:
     enabled: false
   csslint:
