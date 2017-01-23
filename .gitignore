@@ -6,3 +6,4 @@
 Crontab/cronLog.log
 Storage/Cache/Views/*
 composer.phar
+Storage/log.log
