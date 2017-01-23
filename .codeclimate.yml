@@ -2,3 +2,6 @@ exclude_paths:
 - "tests/"
 - "Core/Plugins"
 - "docs/"
+engines:
+  eslint:
+    enabled: false
