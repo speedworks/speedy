@@ -1,7 +1,0 @@
-engines:
-  phpcodesniffer:
-    enabled: true
-exclude_paths:
-- "tests/"
-- "Core/Plugins"
-- "docs/"
