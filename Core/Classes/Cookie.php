@@ -9,6 +9,7 @@ namespace Core\Cookie;
 use Core\System\System;
 class Cookie
 {
+    //@TODO Add to documentation
     private function __construct()
     {
 

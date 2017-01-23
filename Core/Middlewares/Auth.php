@@ -104,7 +104,7 @@ class Auth extends BaseAuth
      * Authenticate a user and return its details
      * @return bool|mixed
      */
-    public function Authenticate() //@TODO return user details as well
+    public function Authenticate()
     {
         $auth = new BaseAuth();
         if($this->type == "KEY")
