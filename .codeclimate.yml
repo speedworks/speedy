@@ -1,6 +1,11 @@
 engines:
   phpmd:
     enabled: true
+    checks:
+      CleanCode/StaticAccess:
+        enabled: false
+      CleanCode/ElseExpression:
+        enabled: false
 ratings:
   paths:
   - "**.php"
