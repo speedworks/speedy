@@ -1,17 +1,7 @@
-languages:
-   PHP: true
-   JavaScript: false
+engines:
+  phpcodesniffer:
+    enabled: true
 exclude_paths:
 - "tests/"
 - "Core/Plugins"
 - "docs/"
-- "**.js"
-engines:
-  phpcodesniffer:
-    enabled: true
-  phpmd:
-    enabled: true
-  eslint:
-    enabled: false
-  csslint:
-    enabled: false
