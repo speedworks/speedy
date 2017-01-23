@@ -1,7 +1,5 @@
 exclude_paths:
 - "tests/"
-- "spec/"
-- "**/vendor/"
-engines:
-  eslint:
-    enabled: false
+- "Core/Plugins"
+- "docs/"
+- "**.js"
