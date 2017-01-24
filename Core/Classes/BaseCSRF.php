@@ -59,5 +59,6 @@ class BaseCSRF
         {
             // Log this as a warning and keep an eye on these attempts
         }
+        //@TODO : $twigEnv->addFunction(new \Twig_SimpleFunction());
     }
 }
