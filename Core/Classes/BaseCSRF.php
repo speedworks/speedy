@@ -42,22 +42,16 @@ class BaseCSRF
 
     public function verifyToken()
     {
-        $token = null;
-        if(isset($_POST['xsrft']) && !empty($_POST['xsrft']))
+        if(isset($_POST['csrf_token']) && !empty($_POST['csrf_token']) && isset($_SESSION['csrf_token']))
         {
-            $token = $_POST['xsrft'];
+            if(hash_equals($_SESSION['token'], $_POST['csrf_token']))
+            {
+                return true;
+            }
         }
         else
         {
             return false;
-        }
-        if (hash_equals($_SESSION['token'], $_POST['token']))
-        {
-            // Proceed to process the form data
-        }
-        else
-        {
-            // Log this as a warning and keep an eye on these attempts
         }
         //@TODO : $twigEnv->addFunction(new \Twig_SimpleFunction());
     }
