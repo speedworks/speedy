@@ -50,6 +50,23 @@
 
 						</li>
 				<li>
+					<a href="namespace-Core.Middleware.html">
+						Middleware<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Core.Middleware.Auth.html">
+						Auth					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Middleware.CSRF.html">
+						CSRF					</a>
+
+						</li>
+							</ul></li>
+				<li>
 					<a href="namespace-Core.Route.html">
 						Route					</a>
 
@@ -136,7 +153,7 @@
 		<b>Namespace:</b> <a href="namespace-Core.html">Core</a>\<a href="namespace-Core.Cookie.html">Cookie</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Core.Cookie.Cookie.html#10-28" title="Go to source code">Cookie.php</a>
+			<b>Located at</b> <a href="source-class-Core.Cookie.Cookie.html#10-86" title="Go to source code">7.php</a>
 		<br>
 	</div>
 
@@ -149,24 +166,45 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-Core.Cookie.Cookie.html#16-19" title="Go to source code">set</a>( )</code>
+		<code><a href="source-class-Core.Cookie.Cookie.html#18-32" title="Go to source code">set</a>( <span>String <var>$cookieName</var></span>, <span>String <var>$cookieValue</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$expiryDays</var> = <span class="php-num">365</span></span>, <span>String <var>$path</var> = <span class="php-keyword1">null</span></span>, <span>String <var>$domain</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$secure</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$httpOnly</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set a Cookie</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set a Cookie</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cookieName</var></dt>
+					<dd></dd>
+					<dt><var>$cookieValue</var></dt>
+					<dd>[optional]</dd>
+					<dt><var>$expiryDays</var></dt>
+					<dd>[optional]</dd>
+					<dt><var>$path</var></dt>
+					<dd>[optional]</dd>
+					<dt><var>$domain</var></dt>
+					<dd>[optional]</dd>
+					<dt><var>$secure</var></dt>
+					<dd>[optional]</dd>
+					<dt><var>$httpOnly</var></dt>
+					<dd>[optional]</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
 
 
 
@@ -179,24 +217,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			String/array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Core.Cookie.Cookie.html#20-23" title="Go to source code">get</a>( )</code>
+		<code><a href="source-class-Core.Cookie.Cookie.html#34-50" title="Go to source code">get</a>( <span>null <var>$cookieName</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>Get value of a cookie or get all cookies</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Get value of a cookie or get all cookies</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cookieName</var></dt>
+					<dd>$cookieName [optional]</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					String/array<br>if exists | null if cookie does not exist
+				</div>
 
 
 
@@ -209,24 +256,72 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has">#</a>
-		<code><a href="source-class-Core.Cookie.Cookie.html#24-27" title="Go to source code">has</a>( )</code>
+		<code><a href="source-class-Core.Cookie.Cookie.html#52-60" title="Go to source code">has</a>( <span> <var>$cookieName</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Checks if cookie exists or not</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Checks if cookie exists or not</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cookieName</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
 			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-Core.Cookie.Cookie.html#62-85" title="Go to source code">delete</a>( <span>String <var>$cookieName</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Delete a cookie or all cookies</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete a cookie or all cookies</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cookieName</var></dt>
+					<dd>[optional]</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
 
 
 

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File Auth.php</title>
+	<title>File 4.php</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -26,17 +26,68 @@
 
 						<ul>
 				<li>
-					<a href="namespace-Core.Middlewares.html">
-						Middlewares<span></span>
+					<a href="namespace-Core.BaseClasses.html">
+						BaseClasses					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Cookie.html">
+						Cookie					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Crontab.html">
+						Crontab					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.DB.html">
+						DB					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Input.html">
+						Input					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Middleware.html">
+						Middleware<span></span>
 					</a>
 
 						<ul>
 				<li>
-					<a href="namespace-Core.Middlewares.Auth.html">
+					<a href="namespace-Core.Middleware.Auth.html">
 						Auth					</a>
 
 						</li>
-							</ul></li></ul></li>
+				<li>
+					<a href="namespace-Core.Middleware.CSRF.html">
+						CSRF					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Core.Route.html">
+						Route					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Session.html">
+						Session					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.System.html">
+						System					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
 			</ul>
 		</div>
 
@@ -46,13 +97,39 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Core.Middlewares.Auth.Auth.html">Core\Middlewares\Auth\Auth</a></li>
+				<li><a href="class-Bridge.html">Bridge</a></li>
+				<li><a href="class-Core.BaseClasses.BaseAuth.html">Core\BaseClasses\BaseAuth</a></li>
+				<li><a href="class-Core.BaseClasses.BaseController.html">Core\BaseClasses\BaseController</a></li>
+				<li><a href="class-Core.BaseClasses.BaseCSRF.html">Core\BaseClasses\BaseCSRF</a></li>
+				<li><a href="class-Core.Cookie.Cookie.html">Core\Cookie\Cookie</a></li>
+				<li><a href="class-Core.Crontab.Crontab.html">Core\Crontab\Crontab</a></li>
+				<li><a href="class-Core.DB.DB.html">Core\DB\DB</a></li>
+				<li><a href="class-Core.Input.Input.html">Core\Input\Input</a></li>
+				<li><a href="class-Core.Middleware.Auth.Auth.html">Core\Middleware\Auth\Auth</a></li>
+				<li><a href="class-Core.Middleware.CSRF.CSRF.html">Core\Middleware\CSRF\CSRF</a></li>
+				<li><a href="class-Core.Route.Route.html">Core\Route\Route</a></li>
+				<li><a href="class-Core.Session.Session.html">Core\Session\Session</a></li>
+				<li><a href="class-Core.System.System.html">Core\System\System</a></li>
 			</ul>
 
 
 
 
 
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-back.html">back</a></li>
+				<li><a href="function-ControllerAutoload.html">ControllerAutoload</a></li>
+				<li><a href="function-dbd.html">dbd</a></li>
+				<li><a href="function-ErrorHandler.html">ErrorHandler</a></li>
+				<li><a href="function-ExceptionHandler.html">ExceptionHandler</a></li>
+				<li><a href="function-json.html">json</a></li>
+				<li><a href="function-loadConfig.html">loadConfig</a></li>
+				<li><a href="function-MiddlewareAutoload.html">MiddlewareAutoload</a></li>
+				<li><a href="function-redirect.html">redirect</a></li>
+				<li><a href="function-SPAutoload.html">SPAutoload</a></li>
+				<li><a href="function-view.html">view</a></li>
+			</ul>
 		</div>
 	</div>
 </div>
@@ -90,7 +167,7 @@
 </span></span><span id="5" class="l"><a href="#5">  5: </a><span class="php-comment"> * Date: 11/24/16
 </span></span><span id="6" class="l"><a href="#6">  6: </a><span class="php-comment"> * Time: 4:43 PM
 </span></span><span id="7" class="l"><a href="#7">  7: </a><span class="php-comment"> */</span>
-</span><span id="8" class="l"><a href="#8">  8: </a><span class="php-keyword1">namespace</span> Core\Middlewares\Auth;
+</span><span id="8" class="l"><a href="#8">  8: </a><span class="php-keyword1">namespace</span> Core\Middleware\Auth;
 </span><span id="9" class="l"><a href="#9">  9: </a>
 </span><span id="10" class="l"><a href="#10"> 10: </a><span class="php-keyword1">use</span> Core\BaseClasses\BaseController;
 </span><span id="11" class="l"><a href="#11"> 11: </a><span class="php-keyword1">use</span> Core\Session\Session;
@@ -189,7 +266,7 @@
 </span></span><span id="104" class="l"><a href="#104">104: </a><span class="php-comment">     * Authenticate a user and return its details
 </span></span><span id="105" class="l"><a href="#105">105: </a><span class="php-comment">     * @return bool|mixed
 </span></span><span id="106" class="l"><a href="#106">106: </a><span class="php-comment">     */</span>
-</span><span id="107" class="l"><a href="#107">107: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> Authenticate() <span class="php-comment">//@TODO return user details as well</span>
+</span><span id="107" class="l"><a href="#107">107: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> Authenticate()
 </span><span id="108" class="l"><a href="#108">108: </a>    {
 </span><span id="109" class="l"><a href="#109">109: </a>        <span class="php-var">$auth</span> = <span class="php-keyword1">new</span> BaseAuth();
 </span><span id="110" class="l"><a href="#110">110: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$this</span>-&gt;type == <span class="php-quote">&quot;KEY&quot;</span>)
@@ -227,6 +304,6 @@
 </div>
 </div>
 <script src="resources/combined.js?cd021bc814832c24a7cec5319ea03335bfba1caf"></script>
-<script src="elementlist.js?f70cea1515641807dbfea8e4e3672e843e875da8"></script>
+<script src="elementlist.js?9970ce2bed5a6519826d116c4edc4970b5076924"></script>
 </body>
 </html>

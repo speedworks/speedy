@@ -50,6 +50,23 @@
 
 						</li>
 				<li>
+					<a href="namespace-Core.Middleware.html">
+						Middleware<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Core.Middleware.Auth.html">
+						Auth					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Core.Middleware.CSRF.html">
+						CSRF					</a>
+
+						</li>
+							</ul></li>
+				<li>
 					<a href="namespace-Core.Route.html">
 						Route					</a>
 
@@ -81,6 +98,7 @@
 			<ul>
 				<li><a href="class-Core.BaseClasses.BaseAuth.html">BaseAuth</a></li>
 				<li class="active"><a href="class-Core.BaseClasses.BaseController.html">BaseController</a></li>
+				<li><a href="class-Core.BaseClasses.BaseCSRF.html">BaseCSRF</a></li>
 			</ul>
 
 
@@ -137,7 +155,7 @@
 		<b>Namespace:</b> <a href="namespace-Core.html">Core</a>\<a href="namespace-Core.BaseClasses.html">BaseClasses</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Core.BaseClasses.BaseController.html#14-107" title="Go to source code">BaseController.php</a>
+			<b>Located at</b> <a href="source-class-Core.BaseClasses.BaseController.html#16-118" title="Go to source code">15.php</a>
 		<br>
 	</div>
 
@@ -157,7 +175,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Core.BaseClasses.BaseController.html#21-31" title="Go to source code">__construct</a>( <span> <var>$request</var></span> )</code>
+		<code><a href="source-class-Core.BaseClasses.BaseController.html#23-37" title="Go to source code">__construct</a>( <span> <var>$request</var></span> )</code>
 
 		<div class="description short">
 			<p>BaseController constructor. Sets the request data which can be accessed in all controllers extending this class.</p>
@@ -192,7 +210,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_view">#</a>
-		<code><a href="source-class-Core.BaseClasses.BaseController.html#34-59" title="Go to source code">view</a>( <span> <var>$view</var></span>, <span>array <var>$arrayParams</var> = []</span>, <span>boolean <var>$exit</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Core.BaseClasses.BaseController.html#40-70" title="Go to source code">view</a>( <span> <var>$view</var></span>, <span>array <var>$arrayParams</var> = []</span>, <span>boolean <var>$exit</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>Returns the view from the template engine.</p>
@@ -231,7 +249,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_redirect">#</a>
-		<code><a href="source-class-Core.BaseClasses.BaseController.html#80-88" title="Go to source code">redirect</a>( <span> <var>$path</var></span> )</code>
+		<code><a href="source-class-Core.BaseClasses.BaseController.html#91-99" title="Go to source code">redirect</a>( <span> <var>$path</var></span> )</code>
 
 		<div class="description short">
 			<p>Redirects a user to a particular URL.</p>
@@ -266,7 +284,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_json">#</a>
-		<code><a href="source-class-Core.BaseClasses.BaseController.html#90-97" title="Go to source code">json</a>( <span> <var>$inArray</var></span> )</code>
+		<code><a href="source-class-Core.BaseClasses.BaseController.html#101-108" title="Go to source code">json</a>( <span> <var>$inArray</var></span> )</code>
 
 		<div class="description short">
 			<p>Returns the JSON value of the passed array</p>
@@ -301,7 +319,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_back">#</a>
-		<code><a href="source-class-Core.BaseClasses.BaseController.html#99-106" title="Go to source code">back</a>( )</code>
+		<code><a href="source-class-Core.BaseClasses.BaseController.html#110-117" title="Go to source code">back</a>( )</code>
 
 		<div class="description short">
 			<p>Brings the user back to the requesting page.</p>
@@ -341,7 +359,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Core.BaseClasses.BaseController.html#16" title="Go to source code"><var>$requestUri</var></a>
+				<a href="source-class-Core.BaseClasses.BaseController.html#18" title="Go to source code"><var>$requestUri</var></a>
 
 			<div class="description short">
 				
@@ -366,7 +384,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Core.BaseClasses.BaseController.html#17" title="Go to source code"><var>$requestMethod</var></a>
+				<a href="source-class-Core.BaseClasses.BaseController.html#19" title="Go to source code"><var>$requestMethod</var></a>
 
 			<div class="description short">
 				
@@ -391,7 +409,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Core.BaseClasses.BaseController.html#18" title="Go to source code"><var>$requestData</var></a>
+				<a href="source-class-Core.BaseClasses.BaseController.html#20" title="Go to source code"><var>$requestData</var></a>
 
 			<div class="description short">
 				
@@ -416,7 +434,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Core.BaseClasses.BaseController.html#19" title="Go to source code"><var>$rawData</var></a>
+				<a href="source-class-Core.BaseClasses.BaseController.html#21" title="Go to source code"><var>$rawData</var></a>
 
 			<div class="description short">
 				
