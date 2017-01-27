@@ -9,8 +9,10 @@ namespace Core\Mailer;
 
 class Mailer
 {
+    private $engine;
     public function __construct()
     {
-
+        $this->engine = $_ENV['mail_engine'];
     }
+
 }

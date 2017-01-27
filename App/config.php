@@ -25,5 +25,5 @@ return [
     'error_pages' => [
         '404' => '404' //404 ERROR Page
     ],
-    'mail_engine' => 'swiftmailer',
+    'mail_engine' => 'PHP', //PHP,SWIFTMAILER,MAILCHIMP
 ];
