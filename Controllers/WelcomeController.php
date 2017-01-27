@@ -5,7 +5,7 @@
  * Date: 26/Dec/2016
  * Time: 14:42:12
  */
-namespace Control\Controllers;
+namespace Controllers;
 use Core\BaseClasses\BaseController;
 
 class WelcomeController extends BaseController

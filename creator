@@ -14,7 +14,7 @@ class creator
  * Date: !!CUR-DATE!!
  * Time: !!CUR-TIME!!
  */
-namespace Control\Controllers;
+namespace Controllers;
 use Core\BaseClasses\BaseController;
 
 class !!CONTROLLER-NAME!! extends BaseController
