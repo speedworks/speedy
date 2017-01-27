@@ -107,6 +107,7 @@
                                                                     <ol>
                                                                         <li class="file x-php ps-item" data-for="baseauth-php"><a class="nobg" href="javascript:void(0);">BaseAuth.php</a></li>
                                                                         <li class="file x-php ps-item" data-for="basecontroller-php"><a class="nobg" href="javascript:void(0);">BaseController.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="basecsrf-php"><a class="nobg" href="javascript:void(0);">BaseCSRF.php</a></li>
                                                                         <li class="file x-php ps-item" data-for="cookie-php"><a class="nobg" href="javascript:void(0);">Cookie.php</a></li>
                                                                         <li class="file x-php ps-item" data-for="crontab-php"><a class="nobg" href="javascript:void(0);">Crontab.php</a></li>
                                                                         <li class="file x-php ps-item" data-for="db-php"><a class="nobg" href="javascript:void(0);">DB.php</a></li>
@@ -118,9 +119,10 @@
                                                                     </ol>
                                                                 </li>
                                                                 <li>
-                                                                    <label class="ps-item" data-for="middlewares" for="ps-middlewares">Middlewares</label> <input type="checkbox" id="ps-middlewares"/>
+                                                                    <label class="ps-item" data-for="middleware" for="ps-middleware">Middleware</label> <input type="checkbox" id="ps-middleware"/>
                                                                     <ol>
                                                                         <li class="file x-php ps-item" data-for="auth-php"><a class="nobg" href="javascript:void(0);">Auth.php</a></li>
+                                                                        <li class="file x-php ps-item" data-for="csrf-php"><a class="nobg" href="javascript:void(0);">CSRF.php</a></li>
                                                                     </ol>
                                                                 </li>
                                                                 <li>
@@ -242,6 +244,10 @@
                                                 <h2 class="title">BaseController.php</h2>
                                                 <p>Contains the Base Class for working with Controllers.</p>
                                             </div>
+                                            <div class="infos" id="basecsrf-php">
+                                                <h2 class="title">BaseCSRF.php</h2>
+                                                <p>Contains the Base Class for CSRF Token based Middleware.</p>
+                                            </div>
                                             <div class="infos" id="cookie-php">
                                                 <h2 class="title">Cookie.php</h2>
                                                 <p>Framework's Cookie Management Class</p>
@@ -275,12 +281,16 @@
                                                 <p>Class containing framework's core functions.</p>
                                             </div>
                                             <div class="infos" id="middlewares">
-                                                <h2 class="title">Middlewares</h2>
+                                                <h2 class="title">Middleware</h2>
                                                 <p>Contains the Application's Middleware. Custom Middleware can be added.</p>
                                             </div>
                                             <div class="infos" id="auth-php">
                                                 <h2 class="title">Auth.php</h2>
                                                 <p>Authentication Middleware Class.</p>
+                                            </div>
+                                            <div class="infos" id="csrf-php">
+                                                <h2 class="title">CSRF.php</h2>
+                                                <p>CSRF Middleware Class.</p>
                                             </div>
                                             <div class="infos" id="plugins">
                                                 <h2 class="title">Plugins</h2>
