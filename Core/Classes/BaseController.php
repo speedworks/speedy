@@ -55,7 +55,7 @@ class BaseController
             'cache' => $cache,
             'auto_reload' => $_ENV['debug'],
         ));
-        $csrfFunction = new Twig_Function('csrfToken', function () {
+        $csrfFunction = new Twig_Function('csrf_token', function () {
             $csrf = new BaseCSRF();
             return $csrf->generateToken();
         });
