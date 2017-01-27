@@ -11,6 +11,7 @@ class BaseCSRF
 {
     public function __construct()
     {
+        session_name('sea-surf');
         session_start();
     }
 
