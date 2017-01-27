@@ -9,7 +9,9 @@ namespace Core\BaseClasses;
 
 use Core\System\System;
 use Twig_Environment;
+use Twig_Function;
 use Twig_Loader_Filesystem;
+use Core\Middleware\CSRF\CSRF;
 
 class BaseController
 {
@@ -28,6 +30,10 @@ class BaseController
         $this->requestMethod = $request[1];
         $this->requestData = $request[2];
         $this->rawData = $request[3];
+        if($this->requestMethod == "POST")
+        {
+            CSRF::verifyCSRFToken($this->requestUri);
+        }
     }
 
 
@@ -49,6 +55,11 @@ class BaseController
             'cache' => $cache,
             'auto_reload' => $_ENV['debug'],
         ));
+        $csrfFunction = new Twig_Function('csrf_token', function () {
+            $csrf = new BaseCSRF();
+            return $csrf->generateToken();
+        });
+        $twig->addFunction($csrfFunction);
         $template = $twig->load($view.'.vu.php');
         if($exit === true)
         {

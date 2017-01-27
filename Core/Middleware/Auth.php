@@ -5,7 +5,7 @@
  * Date: 11/24/16
  * Time: 4:43 PM
  */
-namespace Core\Middlewares\Auth;
+namespace Core\Middleware\Auth;
 
 use Core\BaseClasses\BaseController;
 use Core\Session\Session;

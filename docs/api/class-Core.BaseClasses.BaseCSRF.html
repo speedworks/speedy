@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Core\Session\Session</title>
+	<title>Class Core\BaseClasses\BaseCSRF</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -24,7 +24,7 @@
 					</a>
 
 						<ul>
-				<li>
+				<li class="active">
 					<a href="namespace-Core.BaseClasses.html">
 						BaseClasses					</a>
 
@@ -71,7 +71,7 @@
 						Route					</a>
 
 						</li>
-				<li class="active">
+				<li>
 					<a href="namespace-Core.Session.html">
 						Session					</a>
 
@@ -96,7 +96,9 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Core.Session.Session.html">Session</a></li>
+				<li><a href="class-Core.BaseClasses.BaseAuth.html">BaseAuth</a></li>
+				<li><a href="class-Core.BaseClasses.BaseController.html">BaseController</a></li>
+				<li class="active"><a href="class-Core.BaseClasses.BaseCSRF.html">BaseCSRF</a></li>
 			</ul>
 
 
@@ -123,7 +125,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Core.Session.html" title="Summary of Core\Session"><span>Namespace</span></a>
+				<a href="namespace-Core.BaseClasses.html" title="Summary of Core\BaseClasses"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -135,7 +137,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Session</h1>
+	<h1>Class BaseCSRF</h1>
 
 
 
@@ -150,10 +152,10 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Core.html">Core</a>\<a href="namespace-Core.Session.html">Session</a><br>
+		<b>Namespace:</b> <a href="namespace-Core.html">Core</a>\<a href="namespace-Core.BaseClasses.html">BaseClasses</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Core.Session.Session.html#11-81" title="Go to source code">6.php</a>
+			<b>Located at</b> <a href="source-class-Core.BaseClasses.BaseCSRF.html#10-57" title="Go to source code">5.php</a>
 		<br>
 	</div>
 
@@ -164,7 +166,7 @@
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
-			 protected 
+			 public 
 
 			
 			
@@ -173,14 +175,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Core.Session.Session.html#13-19" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Core.BaseClasses.BaseCSRF.html#12-20" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
-			<p>Session constructor.</p>
+			<p>Initialize CSRF
+BaseCSRF constructor.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Session constructor.</p>
+			<p>Initialize CSRF
+BaseCSRF constructor.</p>
 
 
 
@@ -191,74 +195,32 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="set" id="_set">
+	<tr data-order="generateToken" id="_generateToken">
 
 		<td class="attributes"><code>
-			 public static
+			 public 
 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-Core.Session.Session.html#35-44" title="Go to source code">set</a>( <span> <var>$key</var></span>, <span> <var>$value</var></span> )</code>
+		<a class="anchor" href="#_generateToken">#</a>
+		<code><a href="source-class-Core.BaseClasses.BaseCSRF.html#22-37" title="Go to source code">generateToken</a>( )</code>
 
 		<div class="description short">
-			<p>Set session Data</p>
+			<p>Generate and set the CSRF Token</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Set session Data</p>
+			<p>Generate and set the CSRF Token</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-					<dt><var>$value</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get" id="_get">
-
-		<td class="attributes"><code>
-			 public static
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Core.Session.Session.html#46-62" title="Go to source code">get</a>( <span>null <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			<p>Get session Data</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Get session Data</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					mixed
+					string
 				</div>
 
 
@@ -267,10 +229,10 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="has" id="_has">
+	<tr data-order="verifyToken" id="_verifyToken">
 
 		<td class="attributes"><code>
-			 public static
+			 public 
 
 			boolean
 			
@@ -278,22 +240,17 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_has">#</a>
-		<code><a href="source-class-Core.Session.Session.html#64-80" title="Go to source code">has</a>( <span> <var>$key</var></span> )</code>
+		<a class="anchor" href="#_verifyToken">#</a>
+		<code><a href="source-class-Core.BaseClasses.BaseCSRF.html#39-56" title="Go to source code">verifyToken</a>( )</code>
 
 		<div class="description short">
-			<p>Checks if session has data</p>
+			<p>Verify the submitted Token</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Checks if session has data</p>
+			<p>Verify the submitted Token</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">

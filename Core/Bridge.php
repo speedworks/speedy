@@ -6,11 +6,9 @@
  * Time: 10:49 AM
  */
 require __DIR__.'/autoload.php';
-
 use Core\System\System;
 use Core\Route\Route;
 use Core\BaseClasses\BaseController;
-
 class Bridge extends Route
 {
     public function __construct()
@@ -36,9 +34,9 @@ class Bridge extends Route
             exit(0);
         }
         $opCode=explode('@', $opCode);
-        if(class_exists("Control\\Controllers\\".$opCode[0]))
+        if(class_exists("Controllers\\".$opCode[0]))
         {
-            $clsName='Control\\Controllers\\'.$opCode[0];
+            $clsName='Controllers\\'.$opCode[0];
             $cObject=new $clsName([$requestUri, $requestMethod, $requestData, $rawData]);
             unset($clsName);
             if(method_exists($cObject, $opCode[1]))

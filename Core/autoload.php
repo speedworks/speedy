@@ -41,7 +41,7 @@ spl_autoload_register('ControllerAutoload');
 function MiddlewareAutoload($class)
 {
     $parts = explode('\\', $class);
-    $filename = __DIR__ . '/Middlewares/' .end($parts) . '.php';
+    $filename = __DIR__ . '/Middleware/' .end($parts) . '.php';
     if (file_exists($filename))
     {
         require $filename;
