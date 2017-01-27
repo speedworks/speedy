@@ -10,6 +10,7 @@ namespace Core\BaseClasses;
 use Core\System\System;
 use Twig_Environment;
 use Twig_Loader_Filesystem;
+use Core\Middleware\CSRF\CSRF;
 
 class BaseController
 {
@@ -28,6 +29,10 @@ class BaseController
         $this->requestMethod = $request[1];
         $this->requestData = $request[2];
         $this->rawData = $request[3];
+        if($this->requestMethod == "POST")
+        {
+            CSRF::verifyCSRFToken($this->requestUri);
+        }
     }
 
 
