@@ -24,5 +24,6 @@ return [
     'cache_template' => true, //ALLOW TEMPLATE CACHING FOR SPEED
     'error_pages' => [
         '404' => '404' //404 ERROR Page
-    ]
+    ],
+    'mail_engine' => 'swiftmailer',
 ];
