@@ -21,12 +21,14 @@ class Bridge extends Route
     }
     public static function Pass($requestUri, $requestMethod, $requestData, $rawData)
     {
-        if(!array_key_exists($requestMethod,Route::$URLS))
-        {
-            System::GiveError(405,"Method not allowed");
-        }
         if(!array_key_exists($requestUri,Route::$URLS[$requestMethod]))
         {
+/*            if(Bridge::findKey($requestUri,Route::$URLS))
+            {
+                System::GiveError(405,"Method not allowed");
+            }
+@TODO:: Add Method not allowed Code
+*/
             System::GiveError(404,'Requested path not found');
         }
         $opCode=Route::$URLS[$requestMethod][$requestUri];

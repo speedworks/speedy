@@ -14,7 +14,6 @@ class CSRF
     private static function skipURI()
     {
         return [
-
         ];
     }
     public static function verifyCSRFToken($uri)
@@ -23,8 +22,8 @@ class CSRF
         {
             return true;
         }
-        $base = new BaseCSRF();
-        if(!$base->verifyToken())
+        $csrf = new BaseCSRF();
+        if(!$csrf->verifyToken())
         {
             throw new Exception("CSRF Token Mismatch");
         }
