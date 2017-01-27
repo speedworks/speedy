@@ -9,12 +9,20 @@ namespace Core\BaseClasses;
 
 class BaseCSRF
 {
+    /**
+     * Initialize CSRF
+     * BaseCSRF constructor.
+     */
     public function __construct()
     {
         session_name("sea-surf");
         session_start();
     }
 
+    /**
+     * Generate and set the CSRF Token
+     * @return string
+     */
     public function generateToken()
     {
         if(function_exists('mcrypt_create_iv'))
@@ -28,6 +36,10 @@ class BaseCSRF
         return $_SESSION['csrf_token'];
     }
 
+    /**
+     * Verify the submitted Token
+     * @return bool
+     */
     public function verifyToken()
     {
         if(isset($_POST['csrf_token']) && !empty($_POST['csrf_token']) && isset($_SESSION['csrf_token']))

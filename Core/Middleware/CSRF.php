@@ -11,11 +11,22 @@ use Exception;
 
 class CSRF
 {
+    /**
+     * URI's are defined in the array on which we do not want the CSRF security to work
+     * @return array
+     */
     private static function skipURI()
     {
         return [
         ];
     }
+
+    /**
+     * CSRF Verifier
+     * @param $uri
+     * @return bool
+     * @throws Exception
+     */
     public static function verifyCSRFToken($uri)
     {
         if(in_array($uri,self::skipURI()))
