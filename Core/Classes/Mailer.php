@@ -166,7 +166,7 @@ class Mailer
     private function swiftMailer($options)
     {
         $transport = Swift_SmtpTransport::newInstance($this->mailHost, $this->mailPort, $this->mailEncryption)
-                    ->setUsername($this->mailUser)
+                     ->setUsername($this->mailUser)
                     ->setPassword($this->mailPassword)
                     ->setStreamOptions($options);
         $mailer = Swift_Mailer::newInstance($transport);
