@@ -25,5 +25,13 @@ return [
     'error_pages' => [
         '404' => '404' //404 ERROR Page
     ],
-    'mail_engine' => 'PHP', //PHP,SWIFTMAILER,MAILCHIMP
+    "mail" => [
+        "engine" => "PHP", //PHP,SWIFTMAILER,MAILCHIMP
+        "host" => "mail.example.com",
+        "port" => 587,
+        "user" => "",
+        "password" => "",
+        "encryption" => "tls",
+    ],
+
 ];
