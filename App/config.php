@@ -24,5 +24,14 @@ return [
     'cache_template' => true, //ALLOW TEMPLATE CACHING FOR SPEED
     'error_pages' => [
         '404' => '404' //404 ERROR Page
-    ]
+    ],
+    "mail" => [
+        "engine" => "PHP", //PHP,SWIFTMAILER,MAILCHIMP
+        "host" => "mail.example.com",
+        "port" => 587,
+        "user" => "",
+        "password" => "",
+        "encryption" => "tls",
+    ],
+
 ];
