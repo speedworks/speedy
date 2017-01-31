@@ -18,7 +18,7 @@ class Route
      */
     public static function get($path, $classedFunction)
     {
-        self::$URLS['GET'][$path]=$classedFunction;
+        self::$URLS['GET'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
@@ -28,7 +28,7 @@ class Route
      */
     public static function post($path, $classedFunction)
     {
-        self::$URLS['POST'][$path]=$classedFunction;
+        self::$URLS['POST'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
@@ -38,7 +38,7 @@ class Route
      */
     public static function put($path, $classedFunction)
     {
-        self::$URLS['PUT'][$path]=$classedFunction;
+        self::$URLS['PUT'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
@@ -48,7 +48,7 @@ class Route
      */
     public static function patch($path, $classedFunction)
     {
-        self::$URLS['PATCH'][$path]=$classedFunction;
+        self::$URLS['PATCH'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
@@ -58,7 +58,7 @@ class Route
      */
     public static function delete($path, $classedFunction)
     {
-        self::$URLS['DELETE'][$path]=$classedFunction;
+        self::$URLS['DELETE'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
@@ -68,7 +68,7 @@ class Route
      */
     public static function head($path, $classedFunction)
     {
-        self::$URLS['HEAD'][$path]=$classedFunction;
+        self::$URLS['HEAD'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
@@ -78,7 +78,7 @@ class Route
      */
     public static function options($path, $classedFunction)
     {
-        self::$URLS['OPTIONS'][$path]=$classedFunction;
+        self::$URLS['OPTIONS'][($path!="/")?rtrim($path,"/"):"/"]=$classedFunction;
     }
 
     /**
