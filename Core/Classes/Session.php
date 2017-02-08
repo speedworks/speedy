@@ -53,7 +53,7 @@ class Session
         $segment = self::init();
         if($key==null)
         {
-
+            return flase;
         }
         else
         {
