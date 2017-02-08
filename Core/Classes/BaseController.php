@@ -60,6 +60,11 @@ class BaseController
             return $csrf->generateToken();
         });
         $twig->addFunction($csrfFunction);
+        $assetFunction = new Twig_Function('asset', function () {
+            $asset = ltrim(isset(func_get_args()[0])?func_get_args()[0]:"","/");
+            return "//".$_SERVER['HTTP_HOST']."/".$asset;
+        });
+        $twig->addFunction($assetFunction);
         $template = $twig->load($view.'.vu.php');
         if($exit === true)
         {
